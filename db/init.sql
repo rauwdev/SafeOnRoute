@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS measurements (
+  id BIGSERIAL PRIMARY KEY,
+  device_id TEXT NOT NULL,
+  ts TIMESTAMPTZ NOT NULL,
+  temp DOUBLE PRECISION,
+  hum DOUBLE PRECISION,
+  raw JSONB
+);
+
+CREATE INDEX IF NOT EXISTS idx_measurements_ts ON measurements (ts DESC);
