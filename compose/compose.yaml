@@ -61,6 +61,7 @@ services:
     volumes:
       - ../backups:/backups
       - ../salt:/srv/salt:ro
+      - ../salt/minion.d:/etc/salt/minion.d
     restart: unless-stopped
 
 volumes:
